@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-23T09:00:00Z",
+  "updatedAt": "2026-08-23T03:15:50.621Z",
   "products": [
     {
       "id": "p-1787133600001",
@@ -578,6 +578,30 @@
       "badge": "",
       "placeholder": true,
       "createdAt": "2026-07-17",
+      "updatedAt": "2026-08-23"
+    },
+    {
+      "id": "p-1787454948857",
+      "slug": "live-test-ring-delete-me",
+      "name": "Live test ring (delete me)",
+      "category": "gold",
+      "type": "rings",
+      "brand": "",
+      "purity": "18K",
+      "weight_g": 1.1,
+      "size": "",
+      "price": 77,
+      "originalPrice": null,
+      "currency": "USD",
+      "images": [
+        "assets/img/shop/p-1787454948857-1787454948912-1.jpg"
+      ],
+      "description": "Temporary test piece added by the live check. Removed right after.",
+      "inStock": true,
+      "featured": false,
+      "badge": "",
+      "placeholder": false,
+      "createdAt": "2026-08-23",
       "updatedAt": "2026-08-23"
     }
   ]
