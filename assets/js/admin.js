@@ -60,7 +60,7 @@
   var addForm = $("addForm"), addCardTitle = $("addCardTitle"), addBtn = $("addBtn"), cancelEditBtn = $("cancelEditBtn"), addMsg = $("addMsg");
   var fName = $("addName"), fCat = $("addCategory"), fType = $("addType"), fBrand = $("addBrand"), fPurity = $("addPurity"), fWeight = $("addWeight"), fSize = $("addSize"), fPrice = $("addPrice"), fWas = $("addOriginalPrice"), fDesc = $("addDesc"), fPhotos = $("addPhotos"), photoList = $("photoList"), editPhotoHint = $("editPhotoHint"), fInStock = $("addInStock"), fFeatured = $("addFeatured"), fBadge = $("addBadge"), slugRow = $("slugRow"), slugText = $("slugText");
   var typeField = $("typeField"), brandField = $("brandField"), purityField = $("purityField");
-  var tokenInput = $("tokenInput"), saveTokenBtn = $("saveTokenBtn"), forgetTokenBtn = $("forgetTokenBtn"), tokenMsg = $("tokenMsg"), tokenState = $("tokenState");
+  var tokenInput = $("tokenInput"), saveTokenBtn = $("saveTokenBtn"), forgetTokenBtn = $("forgetTokenBtn"), tokenMsg = $("tokenMsg"), tokenState = $("tokenState"), keyWarn = $("keyWarn");
 
   /* ---------- state ---------- */
   var TOKEN = null, PASS = null, PRODUCTS = [], editing = null, photoItems = [], listFilter = "all", listQuery = "", busy = false;
@@ -147,6 +147,8 @@
     tokenState.textContent = TOKEN ? MSG.stateYes : MSG.stateNo;
     tokenState.classList.toggle("is-ok", !!TOKEN);
     if (forgetTokenBtn) forgetTokenBtn.hidden = !TOKEN;
+    /* the key card is at the bottom now, so say so at the top while there is no key */
+    if (keyWarn) keyWarn.hidden = !!TOKEN;
   }
 
   /* ---------- GitHub Contents API ---------- */

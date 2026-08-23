@@ -14,8 +14,8 @@
   <link rel="preload" href="./assets/fonts/cormorant-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <!-- IMPORTANT: bump ?v= whenever you change the CSS or JS, or browsers keep the old copy -->
-  <link rel="stylesheet" href="./assets/css/admin.css?v=1">
-  <script src="./assets/js/config.js?v=1"></script>
+  <link rel="stylesheet" href="./assets/css/admin.css?v=2">
+  <script src="./assets/js/config.js?v=2"></script>
 </head>
 <body class="admin-body">
   <div class="admin-wrap">
@@ -43,6 +43,105 @@
 
     <!-- ============ DASHBOARD ============ -->
     <div id="adminView" hidden>
+
+      <!-- ============ NO-KEY WARNING (until a publish key is saved on this device) ============ -->
+      <p class="admin-keywarn" id="keyWarn" hidden>No publish key on this device yet, so nothing can be saved to the site. <a href="#tokenCard">Set the publish key</a> at the bottom of this page.</p>
+
+      <!-- ============ ADD / EDIT FORM ============ -->
+      <section class="admin-card" id="formCard">
+        <h2 id="addCardTitle">Add a piece</h2>
+        <form id="addForm">
+          <div class="admin-field">
+            <label for="addName">Name</label>
+            <input type="text" id="addName" required maxlength="80" placeholder="e.g. Rope chain, 14K, 50 cm">
+          </div>
+          <div class="admin-row">
+            <div class="admin-field">
+              <label for="addCategory">Category</label>
+              <select id="addCategory"></select>
+            </div>
+            <div class="admin-field" id="typeField">
+              <label for="addType">Type</label>
+              <select id="addType"></select>
+            </div>
+            <div class="admin-field" id="brandField" hidden>
+              <label for="addBrand">Brand</label>
+              <input type="text" id="addBrand" maxlength="40" placeholder="e.g. Seiko">
+            </div>
+            <div class="admin-field" id="purityField">
+              <label for="addPurity">Purity</label>
+              <select id="addPurity"></select>
+            </div>
+          </div>
+          <div class="admin-row">
+            <div class="admin-field">
+              <label for="addWeight">Weight <span class="admin-hint">grams</span></label>
+              <input type="number" id="addWeight" step="0.1" min="0" inputmode="decimal" placeholder="e.g. 6.8">
+            </div>
+            <div class="admin-field">
+              <label for="addSize">Size <span class="admin-hint">ring size, length in cm or case in mm</span></label>
+              <input type="text" id="addSize" maxlength="40" placeholder="e.g. 50 cm">
+            </div>
+          </div>
+          <div class="admin-row">
+            <div class="admin-field">
+              <label for="addPrice">Price <span class="admin-hint">US dollars</span></label>
+              <input type="number" id="addPrice" step="0.01" min="1" inputmode="decimal" required placeholder="e.g. 640">
+            </div>
+            <div class="admin-field">
+              <label for="addOriginalPrice">Original price <span class="admin-hint">only for a sale; higher than the price</span></label>
+              <input type="number" id="addOriginalPrice" step="0.01" min="1" inputmode="decimal" placeholder="e.g. 720">
+            </div>
+          </div>
+          <div class="admin-field">
+            <label for="addDesc">Description <span class="admin-hint">optional</span></label>
+            <textarea id="addDesc" maxlength="600" rows="3" placeholder="e.g. Diamond-cut rope chain in 14K yellow gold with a lobster clasp, 2.5 mm wide."></textarea>
+          </div>
+          <div class="admin-field">
+            <label for="addPhotos">Photos <span class="admin-hint">up to 4, the first is the cover</span></label>
+            <!-- native file input hidden: its "Choose File" text follows the browser's language; the label-button below triggers it -->
+            <label for="addPhotos" class="btn btn-dark btn-sm">Choose photos</label>
+            <input type="file" id="addPhotos" accept="image/*" multiple class="visually-hidden">
+            <p class="admin-note" id="editPhotoHint" hidden>Leave empty to keep the current photos.</p>
+            <ul class="admin-photo-list" id="photoList"></ul>
+          </div>
+          <div class="admin-row admin-row--checks">
+            <label class="admin-check"><input type="checkbox" id="addInStock" checked> In stock</label>
+            <label class="admin-check"><input type="checkbox" id="addFeatured"> Show on the home page</label>
+            <div class="admin-field admin-field--inline">
+              <label for="addBadge">Badge</label>
+              <select id="addBadge">
+                <option value="">None</option>
+                <option value="New">New</option>
+                <option value="Sale">Sale</option>
+              </select>
+            </div>
+          </div>
+          <p class="admin-note" id="slugRow" hidden>Web address: <code id="slugText"></code></p>
+          <div class="admin-form-actions">
+            <button class="btn btn-accent btn-sm" type="submit" id="addBtn">Add and publish</button>
+            <button class="btn btn-dark btn-sm" type="button" id="cancelEditBtn" hidden>Cancel</button>
+          </div>
+          <p class="admin-msg" id="addMsg"></p>
+        </form>
+      </section>
+
+      <!-- ============ ITEM LIST ============ -->
+      <section class="admin-card">
+        <h2>Pieces in the shop</h2>
+        <div class="admin-filter" role="group" aria-label="Filter the list">
+          <button type="button" class="filter-chip active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-chip" data-filter="gold" aria-pressed="false">Gold</button>
+          <button type="button" class="filter-chip" data-filter="silver" aria-pressed="false">Silver</button>
+          <button type="button" class="filter-chip" data-filter="watches" aria-pressed="false">Watches</button>
+          <button type="button" class="filter-chip" data-filter="sold" aria-pressed="false">Sold out</button>
+          <input type="search" id="listSearch" class="admin-search" placeholder="Search pieces" aria-label="Search pieces" autocorrect="off" autocapitalize="none" spellcheck="false">
+        </div>
+        <p class="admin-note" id="listCount"></p>
+        <ul class="admin-items" id="itemList"></ul>
+        <p class="admin-empty" id="itemsEmpty" hidden>No pieces yet. Add the first one below.</p>
+        <p class="admin-msg" id="listMsg"></p>
+      </section>
 
       <!-- ============ MANUAL (owner-facing) ============ -->
       <section class="admin-card admin-manual">
@@ -158,102 +257,6 @@
         </details>
       </section>
 
-      <!-- ============ ITEM LIST ============ -->
-      <section class="admin-card">
-        <h2>Pieces in the shop</h2>
-        <div class="admin-filter" role="group" aria-label="Filter the list">
-          <button type="button" class="filter-chip active" data-filter="all" aria-pressed="true">All</button>
-          <button type="button" class="filter-chip" data-filter="gold" aria-pressed="false">Gold</button>
-          <button type="button" class="filter-chip" data-filter="silver" aria-pressed="false">Silver</button>
-          <button type="button" class="filter-chip" data-filter="watches" aria-pressed="false">Watches</button>
-          <button type="button" class="filter-chip" data-filter="sold" aria-pressed="false">Sold out</button>
-          <input type="search" id="listSearch" class="admin-search" placeholder="Search pieces" aria-label="Search pieces" autocorrect="off" autocapitalize="none" spellcheck="false">
-        </div>
-        <p class="admin-note" id="listCount"></p>
-        <ul class="admin-items" id="itemList"></ul>
-        <p class="admin-empty" id="itemsEmpty" hidden>No pieces yet. Add the first one below.</p>
-        <p class="admin-msg" id="listMsg"></p>
-      </section>
-
-      <!-- ============ ADD / EDIT FORM ============ -->
-      <section class="admin-card" id="formCard">
-        <h2 id="addCardTitle">Add a piece</h2>
-        <form id="addForm">
-          <div class="admin-field">
-            <label for="addName">Name</label>
-            <input type="text" id="addName" required maxlength="80" placeholder="e.g. Rope chain, 14K, 50 cm">
-          </div>
-          <div class="admin-row">
-            <div class="admin-field">
-              <label for="addCategory">Category</label>
-              <select id="addCategory"></select>
-            </div>
-            <div class="admin-field" id="typeField">
-              <label for="addType">Type</label>
-              <select id="addType"></select>
-            </div>
-            <div class="admin-field" id="brandField" hidden>
-              <label for="addBrand">Brand</label>
-              <input type="text" id="addBrand" maxlength="40" placeholder="e.g. Seiko">
-            </div>
-            <div class="admin-field" id="purityField">
-              <label for="addPurity">Purity</label>
-              <select id="addPurity"></select>
-            </div>
-          </div>
-          <div class="admin-row">
-            <div class="admin-field">
-              <label for="addWeight">Weight <span class="admin-hint">grams</span></label>
-              <input type="number" id="addWeight" step="0.1" min="0" inputmode="decimal" placeholder="e.g. 6.8">
-            </div>
-            <div class="admin-field">
-              <label for="addSize">Size <span class="admin-hint">ring size, length in cm or case in mm</span></label>
-              <input type="text" id="addSize" maxlength="40" placeholder="e.g. 50 cm">
-            </div>
-          </div>
-          <div class="admin-row">
-            <div class="admin-field">
-              <label for="addPrice">Price <span class="admin-hint">US dollars</span></label>
-              <input type="number" id="addPrice" step="0.01" min="1" inputmode="decimal" required placeholder="e.g. 640">
-            </div>
-            <div class="admin-field">
-              <label for="addOriginalPrice">Original price <span class="admin-hint">only for a sale; higher than the price</span></label>
-              <input type="number" id="addOriginalPrice" step="0.01" min="1" inputmode="decimal" placeholder="e.g. 720">
-            </div>
-          </div>
-          <div class="admin-field">
-            <label for="addDesc">Description <span class="admin-hint">optional</span></label>
-            <textarea id="addDesc" maxlength="600" rows="3" placeholder="e.g. Diamond-cut rope chain in 14K yellow gold with a lobster clasp, 2.5 mm wide."></textarea>
-          </div>
-          <div class="admin-field">
-            <label for="addPhotos">Photos <span class="admin-hint">up to 4, the first is the cover</span></label>
-            <!-- native file input hidden: its "Choose File" text follows the browser's language; the label-button below triggers it -->
-            <label for="addPhotos" class="btn btn-dark btn-sm">Choose photos</label>
-            <input type="file" id="addPhotos" accept="image/*" multiple class="visually-hidden">
-            <p class="admin-note" id="editPhotoHint" hidden>Leave empty to keep the current photos.</p>
-            <ul class="admin-photo-list" id="photoList"></ul>
-          </div>
-          <div class="admin-row admin-row--checks">
-            <label class="admin-check"><input type="checkbox" id="addInStock" checked> In stock</label>
-            <label class="admin-check"><input type="checkbox" id="addFeatured"> Show on the home page</label>
-            <div class="admin-field admin-field--inline">
-              <label for="addBadge">Badge</label>
-              <select id="addBadge">
-                <option value="">None</option>
-                <option value="New">New</option>
-                <option value="Sale">Sale</option>
-              </select>
-            </div>
-          </div>
-          <p class="admin-note" id="slugRow" hidden>Web address: <code id="slugText"></code></p>
-          <div class="admin-form-actions">
-            <button class="btn btn-accent btn-sm" type="submit" id="addBtn">Add and publish</button>
-            <button class="btn btn-dark btn-sm" type="button" id="cancelEditBtn" hidden>Cancel</button>
-          </div>
-          <p class="admin-msg" id="addMsg"></p>
-        </form>
-      </section>
-
       <!-- ============ PUBLISH KEY ============ -->
       <section class="admin-card" id="tokenCard">
         <h2>Publish key</h2>
@@ -278,7 +281,7 @@
     </div>
   </div>
 
-  <script src="./assets/js/render.js?v=1" defer></script>
-  <script src="./assets/js/admin.js?v=1" defer></script>
+  <script src="./assets/js/render.js?v=2" defer></script>
+  <script src="./assets/js/admin.js?v=2" defer></script>
 </body>
 </html>

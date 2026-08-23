@@ -78,6 +78,9 @@ code { font-family: ui-monospace, Consolas, monospace; font-size: .85em; backgro
 .admin-field--inline { display: flex; align-items: center; gap: .6rem; margin: 0; }
 .admin-field--inline label { margin: 0; }
 .admin-field--inline select { width: auto; min-width: 8rem; }
+/* shown at the top of the dashboard until a publish key is saved on this device */
+.admin-keywarn { background: var(--cream-2); border-left: 3px solid var(--gold); border-radius: 0 var(--radius-s) var(--radius-s) 0; padding: .85rem 1.1rem; margin-bottom: 1.4rem; font-size: .92rem; color: var(--ink); }
+.admin-keywarn a { color: var(--gold-text); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 .admin-note { font-size: .88rem; color: var(--ink-muted); margin-bottom: .8rem; }
 .admin-state { font-weight: 600; color: var(--ink); }
 .admin-state.is-ok { color: var(--ok); }
