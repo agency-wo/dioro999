@@ -47,7 +47,9 @@ function newPage(ctx) {
 }
 function watch(page) {
   const errors = [], failed = [];
-  page.on("console", m => { if (m.type() === "error") errors.push(m.text()); });
+  /* the agency Cloudflare zone injects its Web Analytics beacon into pages served under minarankstudio.com;
+     the CSP blocks it (harmless), so that one injected-script violation is not counted as a page error */
+  page.on("console", m => { if (m.type() === "error" && !/cloudflareinsights\.com/.test(m.text())) errors.push(m.text()); });
   page.on("pageerror", e => errors.push(String(e)));
   page.on("requestfailed", r => failed.push(r.url()));
   page.on("response", r => { if (r.status() >= 400 && !/favicon/.test(r.url())) failed.push(r.status() + " " + r.url()); });

@@ -2,7 +2,14 @@
 
 Static shop for gold, silver and watches, priced in US dollars. Home, shop, blog, cart, checkout (order request), and an owner admin that publishes straight to GitHub. No framework, no build step for the pages, no server. Hosted on GitHub Pages from this repository (`agency-wo/dioro999`, branch `main`, root).
 
-Live preview: https://minarankstudio.com/dioro999/ until a custom domain is attached.
+## Where it is served (interim, until the client's domain is attached)
+
+- **GitHub Pages** (auto-redeploys on every admin commit): https://minarankstudio.com/dioro999/ . The agency-wo user site carries the `minarankstudio.com` domain, so GitHub serves this project site under that domain, and `agency-wo.github.io/dioro999` 301s there. The shop works there. **The admin does NOT publish from there**: the minarankstudio.com Cloudflare zone adds a response-header CSP (`connect-src 'self' https://api.web3forms.com`, `img-src 'self' data:`) to every path, browsers combine it with the page's own CSP, and calls to `api.github.com` are blocked.
+- **Cloudflare Pages** (manual upload with `npx wrangler pages deploy . --project-name dioro999 --branch main`): https://dioro999.pages.dev/ . Root path, no injected headers; **the admin works here**: https://dioro999.pages.dev/admin . Pages strips `.html`, so `/admin.html` redirects to `/admin`.
+
+One of these two dashboard actions makes a single clean home (owner decision):
+1. Cloudflare -> Workers & Pages -> `dioro999` -> Settings -> Builds -> connect to the GitHub repo `agency-wo/dioro999` (production branch `main`, no build command, output directory `/`). Every admin commit then auto-deploys to dioro999.pages.dev; switch `SITE_URL`, `HOST` in `_tools/verify.py`, robots and the canonicals to `https://dioro999.pages.dev` (search and replace), rerun prerender, build_sitemap and verify. The client's domain later attaches to this Pages project.
+2. Or: Cloudflare -> minarankstudio.com -> Rules -> Transform Rules -> Modify Response Header: exclude `/dioro999/*` from the CSP rule (expression `not starts_with(http.request.uri.path, "/dioro999/")`). Then the GitHub Pages URL also serves the admin.
 
 ## Folder map
 
@@ -56,7 +63,7 @@ The admin page runs entirely in the owner's browser. After login it reads `data/
 ### Setting up the owner's phone (Olsi)
 
 1. Create the key, logged in to GitHub as the account that owns this repo (agency-wo), in a browser: https://github.com/settings/personal-access-tokens/new . Name it (e.g. "DiOro admin, Olsi phone"), longest expiry, Repository access: Only select repositories -> `dioro999`, Permissions -> Repository permissions -> Contents: Read and write. Generate, copy. (Alternative: invite Olsi as a collaborator with write access and let him create the token from his own account.)
-2. On his phone, open https://minarankstudio.com/dioro999/admin.html in Chrome or Safari (not inside another app), log in, paste the key in "Publish key", Save key. It answers "Key saved on this device" after checking it with GitHub.
+2. On his phone, open https://dioro999.pages.dev/admin in Chrome or Safari (not inside another app), log in, paste the key in "Publish key", Save key. It answers "Key saved on this device" after checking it with GitHub. (The minarankstudio.com/dioro999 URL cannot publish until the zone rule above is changed.)
 3. On an iPhone: Share -> Add to Home Screen and open the admin from there. Safari deletes site data after 7 days without a visit, which would make the admin ask for the key again; the Home Screen app is exempt. Keep the key in a password manager so it can be pasted again.
 4. Add a test piece, see it in the shop after 1 to 2 minutes, then remove it.
 5. Note the token expiry date; a new one is needed after it.
