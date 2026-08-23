@@ -33,4 +33,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://agency-wo.github.io/dioro999/sitemap.xml
+Sitemap: https://minarankstudio.com/dioro999/sitemap.xml

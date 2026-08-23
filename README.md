@@ -2,7 +2,7 @@
 
 Static shop for gold, silver and watches, priced in US dollars. Home, shop, blog, cart, checkout (order request), and an owner admin that publishes straight to GitHub. No framework, no build step for the pages, no server. Hosted on GitHub Pages from this repository (`agency-wo/dioro999`, branch `main`, root).
 
-Live preview: https://agency-wo.github.io/dioro999/ until a custom domain is attached.
+Live preview: https://minarankstudio.com/dioro999/ until a custom domain is attached.
 
 ## Folder map
 
@@ -56,7 +56,7 @@ The admin page runs entirely in the owner's browser. After login it reads `data/
 ### Setting up the owner's phone (Olsi)
 
 1. Create the key, logged in to GitHub as the account that owns this repo (agency-wo), in a browser: https://github.com/settings/personal-access-tokens/new . Name it (e.g. "DiOro admin, Olsi phone"), longest expiry, Repository access: Only select repositories -> `dioro999`, Permissions -> Repository permissions -> Contents: Read and write. Generate, copy. (Alternative: invite Olsi as a collaborator with write access and let him create the token from his own account.)
-2. On his phone, open https://agency-wo.github.io/dioro999/admin.html in Chrome or Safari (not inside another app), log in, paste the key in "Publish key", Save key. It answers "Key saved on this device" after checking it with GitHub.
+2. On his phone, open https://minarankstudio.com/dioro999/admin.html in Chrome or Safari (not inside another app), log in, paste the key in "Publish key", Save key. It answers "Key saved on this device" after checking it with GitHub.
 3. On an iPhone: Share -> Add to Home Screen and open the admin from there. Safari deletes site data after 7 days without a visit, which would make the admin ask for the key again; the Home Screen app is exempt. Keep the key in a password manager so it can be pasted again.
 4. Add a test piece, see it in the shop after 1 to 2 minutes, then remove it.
 5. Note the token expiry date; a new one is needed after it.

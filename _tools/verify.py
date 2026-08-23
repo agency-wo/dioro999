@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "_tools"))
 import sync_chrome  # noqa: E402  (expected_blocks, prefix_of)
 
-HOST = "https://agency-wo.github.io/dioro999"
+HOST = "https://minarankstudio.com/dioro999"
 STRICT = "--strict" in sys.argv
 SKIP_DIRS = {"_tools", "node_modules", ".git", "__pycache__"}
 CFG = (ROOT / "assets" / "js" / "config.js").read_text(encoding="utf-8")

@@ -8,16 +8,16 @@ Contact (placeholders until the owner confirms): phone +1 (000) 000-0000, WhatsA
 
 ## Pages
 
-- [Home](https://agency-wo.github.io/dioro999/): what is sold, featured pieces, how ordering works in short, questions before you order
-- [Shop](https://agency-wo.github.io/dioro999/shop/): the full list with filters by category (gold, silver, watches), type or brand, search, sort and a price range up to $3,000+
-- [How ordering works](https://agency-wo.github.io/dioro999/shipping-and-returns/): the four steps, shipping regions, payment, returns
-- [About](https://agency-wo.github.io/dioro999/about/): who we are, what we sell, how we price
-- [Contact](https://agency-wo.github.io/dioro999/contact/)
-- [Blog](https://agency-wo.github.io/dioro999/blog/): short guides on purity, pricing by weight, silver care, plated vs solid gold, quartz vs automatic, ring sizing
-- [Privacy](https://agency-wo.github.io/dioro999/privacy/)
-- [Terms](https://agency-wo.github.io/dioro999/terms/)
+- [Home](https://minarankstudio.com/dioro999/): what is sold, featured pieces, how ordering works in short, questions before you order
+- [Shop](https://minarankstudio.com/dioro999/shop/): the full list with filters by category (gold, silver, watches), type or brand, search, sort and a price range up to $3,000+
+- [How ordering works](https://minarankstudio.com/dioro999/shipping-and-returns/): the four steps, shipping regions, payment, returns
+- [About](https://minarankstudio.com/dioro999/about/): who we are, what we sell, how we price
+- [Contact](https://minarankstudio.com/dioro999/contact/)
+- [Blog](https://minarankstudio.com/dioro999/blog/): short guides on purity, pricing by weight, silver care, plated vs solid gold, quartz vs automatic, ring sizing
+- [Privacy](https://minarankstudio.com/dioro999/privacy/)
+- [Terms](https://minarankstudio.com/dioro999/terms/)
 
 ## Data
 
-- Products data (JSON, the same list the shop renders): https://agency-wo.github.io/dioro999/data/products.json
-- Sitemap: https://agency-wo.github.io/dioro999/sitemap.xml
+- Products data (JSON, the same list the shop renders): https://minarankstudio.com/dioro999/data/products.json
+- Sitemap: https://minarankstudio.com/dioro999/sitemap.xml

@@ -20,7 +20,7 @@
   return Object.freeze({
     SITE_NAME: "DiOro999.9",
     /* TODO: the real domain, no trailing slash. Also HOST in _tools/verify.py and the Sitemap line in robots.txt. */
-    SITE_URL: "https://agency-wo.github.io/dioro999",
+    SITE_URL: "https://minarankstudio.com/dioro999",
     LOCALE: "en-US",
     CURRENCY: "USD",
     PHONE_DISPLAY: "+1 (000) 000-0000",      /* TODO */
