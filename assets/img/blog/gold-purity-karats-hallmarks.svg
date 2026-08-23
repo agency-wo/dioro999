@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Three hallmark stamps reading 999.9, 18K and 750">
+<title>Gold purity hallmarks</title>
+<defs>
+<radialGradient id="g" gradientUnits="userSpaceOnUse" cx="1040" cy="50" r="660"><stop offset="0" stop-color="#C9A15A" stop-opacity=".12"/><stop offset="1" stop-color="#C9A15A" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="675" fill="#0B0B0D"/>
+<rect width="1200" height="675" fill="url(#g)"/>
+<rect x="28" y="28" width="1144" height="619" fill="none" stroke="#C9A15A" stroke-opacity=".28" stroke-width="1.5"/>
+<g fill="none" stroke="#C9A15A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+<ellipse cx="600" cy="337" rx="118" ry="76"/>
+<rect x="734" y="267" width="212" height="140" rx="20"/>
+<path d="M985 268H1135V345C1135 392 1102 418 1060 426C1018 418 985 392 985 345Z"/>
+</g>
+<g fill="none" stroke="#E3C98A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".6">
+<ellipse cx="600" cy="337" rx="106" ry="65"/>
+<rect x="746" y="279" width="188" height="116" rx="14"/>
+<path d="M997 280H1123V343C1123 383 1096 406 1060 413C1024 406 997 383 997 343Z"/>
+</g>
+<text x="600" y="358" font-size="62" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" fill="#C9A15A" text-anchor="middle" letter-spacing="2">999.9</text>
+<text x="840" y="359" font-size="64" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" fill="#C9A15A" text-anchor="middle" letter-spacing="2">18K</text>
+<text x="1060" y="355" font-size="58" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" fill="#C9A15A" text-anchor="middle" letter-spacing="2">750</text>
+</svg>

@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en" data-root="./">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://api.github.com https://api.web3forms.com; form-action 'self' https://api.web3forms.com; object-src 'none'; base-uri 'self'">
+  <meta name="robots" content="noindex, nofollow">
+  <title>DiOro999.9 · Shop admin</title>
+  <meta name="description" content="Owner admin for the DiOro999.9 shop: add, edit, mark sold out and remove pieces, and publish them to the live site.">
+  <meta name="theme-color" content="#0B0B0D">
+  <link rel="icon" href="./favicon.ico" sizes="48x48">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="preload" href="./assets/fonts/cormorant-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- IMPORTANT: bump ?v= whenever you change the CSS or JS, or browsers keep the old copy -->
+  <link rel="stylesheet" href="./assets/css/admin.css?v=1">
+  <script src="./assets/js/config.js?v=1"></script>
+</head>
+<body class="admin-body">
+  <div class="admin-wrap">
+    <header class="admin-header">
+      <h1 class="brand-mark">DiOro<span class="brand-accent">999.9</span> · Admin</h1>
+      <button class="btn btn-dark btn-sm" id="logoutBtn" type="button" hidden>Log out</button>
+    </header>
+
+    <!-- ============ LOGIN ============ -->
+    <section class="admin-card" id="loginView">
+      <h2>Log in</h2>
+      <form id="loginForm">
+        <div class="admin-field">
+          <label for="loginUser">Username</label>
+          <input type="text" id="loginUser" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" required>
+        </div>
+        <div class="admin-field">
+          <label for="loginPass">Password</label>
+          <input type="password" id="loginPass" autocomplete="current-password" required>
+        </div>
+        <button class="btn btn-accent btn-sm" type="submit" id="loginBtn">Log in</button>
+        <p class="admin-msg err" id="loginMsg">Wrong username or password.</p>
+      </form>
+    </section>
+
+    <!-- ============ DASHBOARD ============ -->
+    <div id="adminView" hidden>
+
+      <!-- ============ MANUAL (owner-facing) ============ -->
+      <section class="admin-card admin-manual">
+        <h2>How this page works</h2>
+        <p class="admin-note">Here you manage the pieces shown in the shop. Changes are live for everyone within 1 to 2 minutes. Open a topic below for the steps.</p>
+
+        <details>
+          <summary>What is this page?</summary>
+          <div class="admin-manual-body">
+            <p>This is the shop admin. Only you use it; visitors never see it. From here you can <b>add</b> pieces, <b>edit</b> them, mark them <b>sold out</b> and <b>remove</b> them.</p>
+            <p>Name, price and description appear on the site <b>exactly as you type them</b>. Prices are in US dollars. Every piece gets its own Add to cart button and a WhatsApp button; a customer who presses it writes to you about that piece.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Set up this phone (do this once)</summary>
+          <div class="admin-manual-body">
+            <ol>
+              <li>Open this page in the phone <b>browser</b> (Chrome or Safari), not inside another app.</li>
+              <li>Log in with your username and password.</li>
+              <li>Paste the <b>publish key</b> in the box at the bottom of the page and press <b>Save key</b>. You get the key from the person who looks after the site, or you create it yourself (see "How to create the key on a phone").</li>
+              <li>On an iPhone, add this page to the <b>Home Screen</b> (Share, then Add to Home Screen) and open it from there. Safari forgets site data after a week without a visit; the Home Screen app does not.</li>
+              <li>Keep a copy of the key somewhere safe (a password manager). If the page ever says "No key on this device yet", paste it again.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>How to add a piece</summary>
+          <div class="admin-manual-body">
+            <ol>
+              <li>In <b>"Add a piece"</b>, type the name (for example <i>Rope chain, 14K, 50 cm</i>).</li>
+              <li>Choose the <b>category</b>: Gold, Silver or Watches.</li>
+              <li>For gold and silver choose the <b>type</b> (rings, chains, bars and coins...) and the <b>purity</b> (18K, 925...). For watches type the <b>brand</b>.</li>
+              <li>Type the <b>weight</b> in grams and the <b>size</b> if there is one (ring size, length in cm, case in mm).</li>
+              <li>Type the <b>price</b> in US dollars, digits only. If the piece is on sale, type the old price in <b>Original price</b>; the shop shows a Sale badge and the old price crossed out.</li>
+              <li>Add a short <b>description</b> (optional): material, finish, what is included.</li>
+              <li>Choose up to <b>4 photos</b> from the gallery. The first one is the cover. Photos are shrunk automatically, you do not need to prepare them.</li>
+              <li>Leave <b>In stock</b> ticked. Tick <b>Show on the home page</b> for a piece you want in the featured row. Pick a badge if you want one.</li>
+              <li>Press <b>"Add and publish"</b> and wait for the green message.</li>
+              <li>After 1 to 2 minutes the piece is in the shop.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>How to edit a piece</summary>
+          <div class="admin-manual-body">
+            <ol>
+              <li>In the list <b>"Pieces in the shop"</b> press <b>"Edit"</b> next to the piece. The form fills with its details.</li>
+              <li>Change whatever you need. The web address of the piece stays the same.</li>
+              <li>Photos: the current photos are shown with a Remove button each. Add new ones only if you want more or different ones.</li>
+              <li>Press <b>"Save changes"</b> (or <b>"Cancel"</b> to leave without saving).</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Sold out and removing</summary>
+          <div class="admin-manual-body">
+            <p><b>"Mark sold out"</b> keeps the piece visible in the shop with a Sold out badge and no Add to cart button. Press <b>"Back in stock"</b> when it is available again.</p>
+            <p><b>"Remove"</b> deletes the piece from the shop after a confirmation. If you need it again later, add it again. Photos are never deleted from the site, so nothing else breaks.</p>
+            <p>There is no quantity. A piece is either in stock or sold out.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Photos</summary>
+          <div class="admin-manual-body">
+            <p>Up to 4 photos per piece, JPG or PNG, straight from the phone gallery. They are resized to 1200 pixels on the long side before upload, so even large photos are fine. The first photo is the cover shown in the shop list; use <b>"Make cover"</b> to change it.</p>
+            <p>Square photos on a plain light background look best in the shop.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Why the publish key is needed</summary>
+          <div class="admin-manual-body">
+            <p>The site is stored on GitHub, and GitHub needs a <b>key</b> to allow changes. Without it you can log in and see the list, but you cannot publish.</p>
+            <p>The key is set <b>once per device</b> (phone, computer) and stored only on that device, encrypted with your password, not on the site. It expires after about a year; then you create a new one.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How to create the key on a phone</summary>
+          <div class="admin-manual-body">
+            <p><b>Important:</b> do this in the phone <b>browser</b> (Chrome or Safari), <b>not</b> in the GitHub app. The app does not have this setting.</p>
+            <ol>
+              <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">the page to create a key</a> and log in to the GitHub account that owns the site. If it asks to open the GitHub app, stay in the browser.</li>
+              <li>Give it a name (for example <i>DiOro admin phone</i>) and the longest expiry offered.</li>
+              <li>Under <b>Repository access</b> choose <b>Only select repositories</b> and pick <b>dioro999</b>.</li>
+              <li>Under <b>Permissions, Repository permissions, Contents</b> set <b>Read and write</b>. <b>Careful:</b> Read <b>and write</b>, not only Read. Without it publishing fails.</li>
+              <li>Press <b>Generate token</b> and <b>copy</b> the key (it is shown only once).</li>
+              <li>Come back to this page, paste it in the box <b>"Publish key"</b> below and press <b>Save key</b>.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Common problems</summary>
+          <div class="admin-manual-body">
+            <ul>
+              <li><b>"GitHub did not accept the key"</b>: the key is mistyped or has expired. Create a new one.</li>
+              <li><b>"The key cannot see the site's repository"</b>: create it again with <b>Only select repositories</b> and pick <b>dioro999</b>.</li>
+              <li><b>"The key cannot write to the site"</b>: create it again with <b>Contents: Read and write</b>.</li>
+              <li><b>"Save the publish key first"</b>: this device has no key yet. Paste it once and it does not ask again.</li>
+              <li><b>"No key on this device yet"</b> after it used to work: the browser cleared its data (Safari does this after a week without a visit). Paste the key again, and open the page from the Home Screen next time.</li>
+              <li><b>"This photo could not be read"</b>: try another photo (JPG or PNG).</li>
+              <li><b>"Someone else published at the same time"</b>: two devices saved at once. Press the button again.</li>
+              <li><b>The change is not showing yet</b>: wait 1 to 2 minutes and refresh the shop page.</li>
+              <li><b>Forgot the password?</b> Ask the person who looks after the site.</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <!-- ============ ITEM LIST ============ -->
+      <section class="admin-card">
+        <h2>Pieces in the shop</h2>
+        <div class="admin-filter" role="group" aria-label="Filter the list">
+          <button type="button" class="filter-chip active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-chip" data-filter="gold" aria-pressed="false">Gold</button>
+          <button type="button" class="filter-chip" data-filter="silver" aria-pressed="false">Silver</button>
+          <button type="button" class="filter-chip" data-filter="watches" aria-pressed="false">Watches</button>
+          <button type="button" class="filter-chip" data-filter="sold" aria-pressed="false">Sold out</button>
+          <input type="search" id="listSearch" class="admin-search" placeholder="Search pieces" aria-label="Search pieces" autocorrect="off" autocapitalize="none" spellcheck="false">
+        </div>
+        <p class="admin-note" id="listCount"></p>
+        <ul class="admin-items" id="itemList"></ul>
+        <p class="admin-empty" id="itemsEmpty" hidden>No pieces yet. Add the first one below.</p>
+        <p class="admin-msg" id="listMsg"></p>
+      </section>
+
+      <!-- ============ ADD / EDIT FORM ============ -->
+      <section class="admin-card" id="formCard">
+        <h2 id="addCardTitle">Add a piece</h2>
+        <form id="addForm">
+          <div class="admin-field">
+            <label for="addName">Name</label>
+            <input type="text" id="addName" required maxlength="80" placeholder="e.g. Rope chain, 14K, 50 cm">
+          </div>
+          <div class="admin-row">
+            <div class="admin-field">
+              <label for="addCategory">Category</label>
+              <select id="addCategory"></select>
+            </div>
+            <div class="admin-field" id="typeField">
+              <label for="addType">Type</label>
+              <select id="addType"></select>
+            </div>
+            <div class="admin-field" id="brandField" hidden>
+              <label for="addBrand">Brand</label>
+              <input type="text" id="addBrand" maxlength="40" placeholder="e.g. Seiko">
+            </div>
+            <div class="admin-field" id="purityField">
+              <label for="addPurity">Purity</label>
+              <select id="addPurity"></select>
+            </div>
+          </div>
+          <div class="admin-row">
+            <div class="admin-field">
+              <label for="addWeight">Weight <span class="admin-hint">grams</span></label>
+              <input type="number" id="addWeight" step="0.1" min="0" inputmode="decimal" placeholder="e.g. 6.8">
+            </div>
+            <div class="admin-field">
+              <label for="addSize">Size <span class="admin-hint">ring size, length in cm or case in mm</span></label>
+              <input type="text" id="addSize" maxlength="40" placeholder="e.g. 50 cm">
+            </div>
+          </div>
+          <div class="admin-row">
+            <div class="admin-field">
+              <label for="addPrice">Price <span class="admin-hint">US dollars</span></label>
+              <input type="number" id="addPrice" step="0.01" min="1" inputmode="decimal" required placeholder="e.g. 640">
+            </div>
+            <div class="admin-field">
+              <label for="addOriginalPrice">Original price <span class="admin-hint">only for a sale; higher than the price</span></label>
+              <input type="number" id="addOriginalPrice" step="0.01" min="1" inputmode="decimal" placeholder="e.g. 720">
+            </div>
+          </div>
+          <div class="admin-field">
+            <label for="addDesc">Description <span class="admin-hint">optional</span></label>
+            <textarea id="addDesc" maxlength="600" rows="3" placeholder="e.g. Diamond-cut rope chain in 14K yellow gold with a lobster clasp, 2.5 mm wide."></textarea>
+          </div>
+          <div class="admin-field">
+            <label for="addPhotos">Photos <span class="admin-hint">up to 4, the first is the cover</span></label>
+            <!-- native file input hidden: its "Choose File" text follows the browser's language; the label-button below triggers it -->
+            <label for="addPhotos" class="btn btn-dark btn-sm">Choose photos</label>
+            <input type="file" id="addPhotos" accept="image/*" multiple class="visually-hidden">
+            <p class="admin-note" id="editPhotoHint" hidden>Leave empty to keep the current photos.</p>
+            <ul class="admin-photo-list" id="photoList"></ul>
+          </div>
+          <div class="admin-row admin-row--checks">
+            <label class="admin-check"><input type="checkbox" id="addInStock" checked> In stock</label>
+            <label class="admin-check"><input type="checkbox" id="addFeatured"> Show on the home page</label>
+            <div class="admin-field admin-field--inline">
+              <label for="addBadge">Badge</label>
+              <select id="addBadge">
+                <option value="">None</option>
+                <option value="New">New</option>
+                <option value="Sale">Sale</option>
+              </select>
+            </div>
+          </div>
+          <p class="admin-note" id="slugRow" hidden>Web address: <code id="slugText"></code></p>
+          <div class="admin-form-actions">
+            <button class="btn btn-accent btn-sm" type="submit" id="addBtn">Add and publish</button>
+            <button class="btn btn-dark btn-sm" type="button" id="cancelEditBtn" hidden>Cancel</button>
+          </div>
+          <p class="admin-msg" id="addMsg"></p>
+        </form>
+      </section>
+
+      <!-- ============ PUBLISH KEY ============ -->
+      <section class="admin-card" id="tokenCard">
+        <h2>Publish key</h2>
+        <p class="admin-note">Saving to the site needs a key from GitHub, once per device. It is stored only in this browser, encrypted with your password. You can do this from the phone browser (not the GitHub app).</p>
+        <p class="admin-note admin-state" id="tokenState">No key on this device yet.</p>
+        <ol class="admin-steps">
+          <li><a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener"><b>Create a new key</b></a> on GitHub (or: <b>github.com</b>, Settings, Developer settings, Fine-grained personal access tokens, <b>Generate new token</b>), logged in as the account that owns the site.</li>
+          <li>Repository access: <b>Only select repositories</b>, then pick <b>dioro999</b>.</li>
+          <li>Permissions, Repository permissions, <b>Contents: Read and write</b> (<b>careful:</b> Read <b>and write</b>, not only Read).</li>
+          <li>Generate the key, copy it and paste it here.</li>
+        </ol>
+        <div class="admin-field">
+          <label for="tokenInput">Key (token)</label>
+          <input type="password" id="tokenInput" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="github_pat_...">
+        </div>
+        <div class="admin-form-actions">
+          <button class="btn btn-dark btn-sm" id="saveTokenBtn" type="button">Save key</button>
+          <button class="btn btn-ghost btn-sm" id="forgetTokenBtn" type="button" hidden>Forget the key on this device</button>
+        </div>
+        <p class="admin-msg" id="tokenMsg"></p>
+      </section>
+    </div>
+  </div>
+
+  <script src="./assets/js/render.js?v=1" defer></script>
+  <script src="./assets/js/admin.js?v=1" defer></script>
+</body>
+</html>

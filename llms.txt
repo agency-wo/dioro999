@@ -1,0 +1,23 @@
+# DiOro999.9
+
+> Gold jewellery and bullion, 925 sterling silver and new watches, sold online in US dollars. Every listing states purity and weight.
+
+DiOro999.9 is a small online shop. Prices are in US dollars and exclude shipping. Bars and coins follow the daily metal price and are confirmed at order. There is no online payment yet: a customer adds pieces to the cart and sends an order request; the shop confirms stock, shipping and the total by email or WhatsApp within one business day; the customer pays by link (card or PayPal) or bank transfer; the shop ships insured and tracked. Returns within 14 days for unworn pieces in the original packaging; sealed bars and coins must stay sealed.
+
+Contact (placeholders until the owner confirms): phone +1 (000) 000-0000, WhatsApp +1 000 000 0000, email orders@example.com, TODO street, TODO city, TODO state 00000, hours Mon to Sat, 10:00 to 19:00.
+
+## Pages
+
+- [Home](https://agency-wo.github.io/dioro999/): what is sold, featured pieces, how ordering works in short, questions before you order
+- [Shop](https://agency-wo.github.io/dioro999/shop/): the full list with filters by category (gold, silver, watches), type or brand, search, sort and a price range up to $3,000+
+- [How ordering works](https://agency-wo.github.io/dioro999/shipping-and-returns/): the four steps, shipping regions, payment, returns
+- [About](https://agency-wo.github.io/dioro999/about/): who we are, what we sell, how we price
+- [Contact](https://agency-wo.github.io/dioro999/contact/)
+- [Blog](https://agency-wo.github.io/dioro999/blog/): short guides on purity, pricing by weight, silver care, plated vs solid gold, quartz vs automatic, ring sizing
+- [Privacy](https://agency-wo.github.io/dioro999/privacy/)
+- [Terms](https://agency-wo.github.io/dioro999/terms/)
+
+## Data
+
+- Products data (JSON, the same list the shop renders): https://agency-wo.github.io/dioro999/data/products.json
+- Sitemap: https://agency-wo.github.io/dioro999/sitemap.xml

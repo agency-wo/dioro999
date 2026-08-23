@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="A balance scale weighing a small gold bar against weights">
+<title>How gold is priced by weight</title>
+<defs>
+<radialGradient id="g" gradientUnits="userSpaceOnUse" cx="1040" cy="50" r="660"><stop offset="0" stop-color="#C9A15A" stop-opacity=".12"/><stop offset="1" stop-color="#C9A15A" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="675" fill="#0B0B0D"/>
+<rect width="1200" height="675" fill="url(#g)"/>
+<rect x="28" y="28" width="1144" height="619" fill="none" stroke="#C9A15A" stroke-opacity=".28" stroke-width="1.5"/>
+<g fill="none" stroke="#C9A15A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M820 158V520M700 560H940"/>
+<rect x="740" y="520" width="160" height="28" rx="6"/>
+<circle cx="820" cy="150" r="9"/>
+<path d="M601 169L1039 131"/>
+<circle cx="601" cy="169" r="6"/><circle cx="1039" cy="131" r="6"/>
+<path d="M601 175L521 369M601 175L681 369"/>
+<path d="M521 369H681M521 369Q601 433 681 369"/>
+<path d="M1039 137L959 331M1039 137L1119 331"/>
+<path d="M959 331H1119M959 331Q1039 395 1119 331"/>
+<polygon points="561,335 641,335 641,369 561,369"/>
+<polygon points="561,335 641,335 655,321 575,321"/>
+<path d="M641 335L655 321V355L641 369"/>
+<path d="M1005 295V331M1073 295V331"/><ellipse cx="1039" cy="295" rx="34" ry="8"/>
+<path d="M1019 261V287M1059 261V287"/><ellipse cx="1039" cy="261" rx="20" ry="5"/>
+<circle cx="1039" cy="247" r="8"/>
+</g>
+<g fill="none" stroke="#E3C98A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M575 321H655M1005 295A34 8 0 0 1 1073 295M705 170L800 153"/>
+<path d="M541 389Q581 421 621 417"/>
+</g>
+</svg>

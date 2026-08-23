@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-label="Silver necklace, placeholder image">
+<title>Silver necklace (placeholder)</title>
+<defs>
+<radialGradient id="v" cx=".5" cy=".5" r=".72"><stop offset=".55" stop-color="#F4F0E8" stop-opacity="0"/><stop offset="1" stop-color="#F4F0E8"/></radialGradient>
+<filter id="s" x="-40%" y="-100%" width="180%" height="300%"><feGaussianBlur stdDeviation="24"/></filter>
+<filter id="h" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+<linearGradient id="m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2F2F0"/><stop offset=".42" stop-color="#C9C9C4"/><stop offset=".74" stop-color="#8F8F8A"/><stop offset="1" stop-color="#C9C9C4"/></linearGradient>
+<linearGradient id="r" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8F8F8A"/><stop offset=".4" stop-color="#C9C9C4"/><stop offset=".78" stop-color="#F2F2F0"/><stop offset="1" stop-color="#C9C9C4"/></linearGradient>
+<radialGradient id="b" cx=".35" cy=".32" r=".8"><stop offset="0" stop-color="#F2F2F0"/><stop offset=".5" stop-color="#C9C9C4"/><stop offset="1" stop-color="#8F8F8A"/></radialGradient>
+<g id="f"><ellipse rx="14" ry="9" fill="none" stroke="url(#m)" stroke-width="5"/><path d="M-8 -5Q0 -9 7 -7" stroke="#FDFCF8" stroke-width="1.5" fill="none" opacity=".8"/></g>
+<g id="e"><path d="M-8 0H8" stroke="#C9C9C4" stroke-width="7" stroke-linecap="round"/><path d="M-6 -1.5H4" stroke="#F2F2F0" stroke-width="1.6" stroke-linecap="round" opacity=".9"/></g>
+</defs>
+<rect width="1200" height="1200" fill="#FDFCF8"/>
+<rect width="1200" height="1200" fill="url(#v)"/>
+<rect x="40" y="40" width="1120" height="1120" fill="none" stroke="#E8D5A3" stroke-width="2"/>
+<path d="M240 200C240 810 960 810 960 200" fill="none" stroke="#0B0B0D" stroke-width="22" opacity=".18" filter="url(#s)" transform="translate(6 18)"/>
+<ellipse cx="606" cy="830" rx="64" ry="14" fill="#0B0B0D" opacity=".18" filter="url(#s)"/>
+<use href="#f" transform="translate(240 214) rotate(89)"/>
+<use href="#e" transform="translate(241 240) rotate(87)"/>
+<use href="#f" transform="translate(243 267) rotate(85)"/>
+<use href="#e" transform="translate(246 294) rotate(82)"/>
+<use href="#f" transform="translate(250 320) rotate(80)"/>
+<use href="#e" transform="translate(256 347) rotate(77)"/>
+<use href="#f" transform="translate(262 373) rotate(74)"/>
+<use href="#e" transform="translate(271 399) rotate(71)"/>
+<use href="#f" transform="translate(280 425) rotate(68)"/>
+<use href="#e" transform="translate(291 449) rotate(65)"/>
+<use href="#f" transform="translate(303 473) rotate(61)"/>
+<use href="#e" transform="translate(317 496) rotate(57)"/>
+<use href="#f" transform="translate(332 518) rotate(53)"/>
+<use href="#e" transform="translate(349 539) rotate(49)"/>
+<use href="#f" transform="translate(368 559) rotate(45)"/>
+<use href="#e" transform="translate(387 577) rotate(41)"/>
+<use href="#f" transform="translate(409 594) rotate(36)"/>
+<use href="#e" transform="translate(431 610) rotate(31)"/>
+<use href="#f" transform="translate(454 622) rotate(27)"/>
+<use href="#e" transform="translate(480 634) rotate(22)"/>
+<use href="#f" transform="translate(505 643) rotate(17)"/>
+<use href="#e" transform="translate(531 650) rotate(12)"/>
+<use href="#f" transform="translate(558 655) rotate(8)"/>
+<use href="#e" transform="translate(585 657) rotate(3)"/>
+<use href="#f" transform="translate(612 657) rotate(-2)"/>
+<use href="#e" transform="translate(639 655) rotate(-7)"/>
+<use href="#f" transform="translate(664 651) rotate(-12)"/>
+<use href="#e" transform="translate(691 644) rotate(-17)"/>
+<use href="#f" transform="translate(717 635) rotate(-21)"/>
+<use href="#e" transform="translate(741 625) rotate(-26)"/>
+<use href="#f" transform="translate(765 612) rotate(-31)"/>
+<use href="#e" transform="translate(788 597) rotate(-35)"/>
+<use href="#f" transform="translate(809 581) rotate(-40)"/>
+<use href="#e" transform="translate(829 563) rotate(-44)"/>
+<use href="#f" transform="translate(848 543) rotate(-48)"/>
+<use href="#e" transform="translate(865 522) rotate(-53)"/>
+<use href="#f" transform="translate(880 500) rotate(-57)"/>
+<use href="#e" transform="translate(895 477) rotate(-60)"/>
+<use href="#f" transform="translate(907 453) rotate(-64)"/>
+<use href="#e" transform="translate(918 429) rotate(-67)"/>
+<use href="#f" transform="translate(928 404) rotate(-71)"/>
+<use href="#e" transform="translate(936 378) rotate(-74)"/>
+<use href="#f" transform="translate(943 351) rotate(-77)"/>
+<use href="#e" transform="translate(949 326) rotate(-79)"/>
+<use href="#f" transform="translate(953 299) rotate(-82)"/>
+<use href="#e" transform="translate(956 272) rotate(-84)"/>
+<use href="#f" transform="translate(959 245) rotate(-87)"/>
+<use href="#e" transform="translate(960 218) rotate(-89)"/>
+<circle cx="600" cy="664" r="13" fill="none" stroke="url(#m)" stroke-width="7"/>
+<path d="M600 676C567 726 554 753 554 776A46 46 0 0 0 646 776C646 753 633 726 600 676Z" fill="url(#b)"/>
+<path d="M600 700C578 738 570 761 570 776A30 30 0 0 0 630 776C630 761 622 738 600 700Z" fill="none" stroke="#F2F2F0" stroke-width="2" opacity=".7"/>
+<ellipse cx="582" cy="770" rx="10" ry="20" transform="rotate(20 582 770)" fill="#FDFCF8" opacity=".5" filter="url(#h)"/>
+</svg>

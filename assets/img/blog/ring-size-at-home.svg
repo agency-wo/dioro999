@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="A ring beside a ruler with tick marks and a loop of string">
+<title>Ring size at home</title>
+<defs>
+<radialGradient id="g" gradientUnits="userSpaceOnUse" cx="1040" cy="50" r="660"><stop offset="0" stop-color="#C9A15A" stop-opacity=".12"/><stop offset="1" stop-color="#C9A15A" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="675" fill="#0B0B0D"/>
+<rect width="1200" height="675" fill="url(#g)"/>
+<rect x="28" y="28" width="1144" height="619" fill="none" stroke="#C9A15A" stroke-opacity=".28" stroke-width="1.5"/>
+<g fill="none" stroke="#C9A15A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="700" cy="290" r="118"/><circle cx="700" cy="290" r="84"/>
+<rect x="560" y="460" width="580" height="70" rx="4"/>
+<path d="M600 460V474M620 460V474M640 460V474M660 460V474M700 460V474M720 460V474M740 460V474M760 460V474M800 460V474M820 460V474M840 460V474M860 460V474M900 460V474M920 460V474M940 460V474M960 460V474M1000 460V474M1020 460V474M1040 460V474M1060 460V474M1100 460V474M1120 460V474" stroke-width="2"/>
+</g>
+<g fill="none" stroke="#E3C98A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M580 460V490M680 460V482M780 460V490M880 460V482M980 460V490M1080 460V482"/>
+<path d="M640 232A84 84 0 0 1 742 216"/>
+<path d="M1040 400C1012 376 1004 356 994 334C900 298 862 220 942 206C1026 192 1098 280 1006 328C1000 348 1030 358 1064 356"/>
+</g>
+</svg>

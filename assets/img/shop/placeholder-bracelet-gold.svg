@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-label="Gold bracelet, placeholder image">
+<title>Gold bracelet (placeholder)</title>
+<defs>
+<radialGradient id="v" cx=".5" cy=".5" r=".72"><stop offset=".55" stop-color="#F4F0E8" stop-opacity="0"/><stop offset="1" stop-color="#F4F0E8"/></radialGradient>
+<filter id="s" x="-40%" y="-100%" width="180%" height="300%"><feGaussianBlur stdDeviation="24"/></filter>
+<filter id="h" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+<linearGradient id="m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E3C98A"/><stop offset=".42" stop-color="#C9A15A"/><stop offset=".74" stop-color="#9A7A38"/><stop offset="1" stop-color="#C9A15A"/></linearGradient>
+<linearGradient id="r" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9A7A38"/><stop offset=".4" stop-color="#C9A15A"/><stop offset=".78" stop-color="#E3C98A"/><stop offset="1" stop-color="#C9A15A"/></linearGradient>
+<radialGradient id="b" cx=".35" cy=".32" r=".8"><stop offset="0" stop-color="#E3C98A"/><stop offset=".5" stop-color="#C9A15A"/><stop offset="1" stop-color="#9A7A38"/></radialGradient>
+</defs>
+<rect width="1200" height="1200" fill="#FDFCF8"/>
+<rect width="1200" height="1200" fill="url(#v)"/>
+<rect x="40" y="40" width="1120" height="1120" fill="none" stroke="#E8D5A3" stroke-width="2"/>
+<ellipse cx="600" cy="905" rx="340" ry="40" fill="#0B0B0D" opacity=".18" filter="url(#s)"/>
+<path d="M745 838A310 270 0 1 0 455 838" fill="none" stroke="#9A7A38" stroke-width="76" stroke-linecap="round" transform="translate(0 24)"/>
+<path d="M745 838A310 270 0 1 0 455 838" fill="none" stroke="url(#m)" stroke-width="76" stroke-linecap="round"/>
+<path d="M745 838A310 270 0 1 0 455 838" fill="none" stroke="#9A7A38" stroke-width="3" opacity=".45" stroke-linecap="round"/>
+<path d="M745 838A310 270 0 1 0 455 838" fill="none" stroke="#E3C98A" stroke-width="2" opacity=".7" stroke-linecap="round" transform="translate(0 3)"/>
+<path d="M900 680A310 270 0 0 1 836 770" fill="none" stroke="#9A7A38" stroke-width="16" opacity=".35" stroke-linecap="round"/>
+<path d="M262 520A348 308 0 0 1 530 296" fill="none" stroke="#FDFCF8" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+<circle cx="455" cy="838" r="46" fill="url(#b)"/>
+<circle cx="441" cy="822" r="10" fill="#FDFCF8" opacity=".55" filter="url(#h)"/>
+<circle cx="745" cy="838" r="46" fill="url(#b)"/>
+<circle cx="731" cy="822" r="10" fill="#FDFCF8" opacity=".55" filter="url(#h)"/>
+<ellipse cx="470" cy="440" rx="62" ry="24" transform="rotate(-38 470 440)" fill="#FDFCF8" opacity=".55" filter="url(#h)"/>
+</svg>

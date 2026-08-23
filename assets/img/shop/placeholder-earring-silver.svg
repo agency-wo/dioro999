@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-label="Silver earrings, placeholder image">
+<title>Silver earrings (placeholder)</title>
+<defs>
+<radialGradient id="v" cx=".5" cy=".5" r=".72"><stop offset=".55" stop-color="#F4F0E8" stop-opacity="0"/><stop offset="1" stop-color="#F4F0E8"/></radialGradient>
+<filter id="s" x="-40%" y="-100%" width="180%" height="300%"><feGaussianBlur stdDeviation="24"/></filter>
+<filter id="h" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+<linearGradient id="m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2F2F0"/><stop offset=".42" stop-color="#C9C9C4"/><stop offset=".74" stop-color="#8F8F8A"/><stop offset="1" stop-color="#C9C9C4"/></linearGradient>
+<linearGradient id="r" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8F8F8A"/><stop offset=".4" stop-color="#C9C9C4"/><stop offset=".78" stop-color="#F2F2F0"/><stop offset="1" stop-color="#C9C9C4"/></linearGradient>
+<radialGradient id="b" cx=".35" cy=".32" r=".8"><stop offset="0" stop-color="#F2F2F0"/><stop offset=".5" stop-color="#C9C9C4"/><stop offset="1" stop-color="#8F8F8A"/></radialGradient>
+<g id="E"><path d="M100 50C100 -15 0 -15 0 50L0 150" fill="none" stroke="#C9C9C4" stroke-width="7" stroke-linecap="round"/><path d="M88 44C88 0 12 0 12 44" fill="none" stroke="#F2F2F0" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="100" cy="52" r="7" fill="url(#b)"/><circle cx="0" cy="160" r="12" fill="none" stroke="url(#m)" stroke-width="6"/><path d="M0 176C-44 253 -75 292 -75 330A75 75 0 0 0 75 330C75 292 44 253 0 176Z" fill="url(#b)"/><path d="M0 210C-28 270 -48 306 -48 330A48 48 0 0 0 48 330C48 306 28 270 0 210Z" fill="none" stroke="#F2F2F0" stroke-width="2.5" opacity=".7"/><ellipse cx="-30" cy="318" rx="12" ry="30" transform="rotate(18 -30 318)" fill="#FDFCF8" opacity=".5" filter="url(#h)"/></g>
+</defs>
+<rect width="1200" height="1200" fill="#FDFCF8"/>
+<rect width="1200" height="1200" fill="url(#v)"/>
+<rect x="40" y="40" width="1120" height="1120" fill="none" stroke="#E8D5A3" stroke-width="2"/>
+<ellipse cx="420" cy="900" rx="120" ry="18" fill="#0B0B0D" opacity=".18" filter="url(#s)"/>
+<ellipse cx="780" cy="900" rx="120" ry="18" fill="#0B0B0D" opacity=".18" filter="url(#s)"/>
+<use href="#E" transform="translate(420 280) scale(1.5)"/>
+<use href="#E" transform="translate(780 280) scale(1.5)"/>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="A silver ring, tarnished on one side and polished on the other, beside a cloth">
+<title>Sterling silver 925 care</title>
+<defs>
+<radialGradient id="g" gradientUnits="userSpaceOnUse" cx="1040" cy="50" r="660"><stop offset="0" stop-color="#C9A15A" stop-opacity=".12"/><stop offset="1" stop-color="#C9A15A" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="675" fill="#0B0B0D"/>
+<rect width="1200" height="675" fill="url(#g)"/>
+<rect x="28" y="28" width="1144" height="619" fill="none" stroke="#C9A15A" stroke-opacity=".28" stroke-width="1.5"/>
+<g fill="none" stroke="#8F8F8A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".85">
+<path d="M800 135A200 165 0 0 0 800 465M800 200A130 100 0 0 0 800 400"/>
+</g>
+<g fill="none" stroke="#8F8F8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity=".55">
+<path d="M735 394L690 429M704 377L651 399M680 354L623 362M666 326L609 319M662 296L610 275M669 267L626 233M686 240L655 196M711 218L695 167M744 202L744 149"/>
+</g>
+<g fill="none" stroke="#F2F2F0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M800 135A200 165 0 0 1 800 465M800 200A130 100 0 0 1 800 400"/>
+</g>
+<g fill="none" stroke="#FDFCF8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M840 150A200 165 0 0 1 950 214M830 215A130 100 0 0 1 896 244"/>
+</g>
+<g fill="none" stroke="#C9C9C4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M530 600C660 560 740 520 860 500C960 484 1020 440 1130 420"/>
+<path d="M540 628C670 588 750 548 870 528C970 512 1040 468 1140 448"/>
+<path d="M1130 420C1162 426 1164 442 1140 448M530 600C516 610 520 624 540 628"/>
+</g>
+<g fill="none" stroke="#F2F2F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".7">
+<path d="M640 584C700 566 760 548 820 540M900 516C960 504 1010 482 1060 460"/>
+</g>
+</svg>

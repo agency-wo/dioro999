@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Three bar cross-sections showing a thin, a thicker and a full gold layer over a grey core">
+<title>Plated, filled and solid gold</title>
+<defs>
+<radialGradient id="g" gradientUnits="userSpaceOnUse" cx="1040" cy="50" r="660"><stop offset="0" stop-color="#C9A15A" stop-opacity=".12"/><stop offset="1" stop-color="#C9A15A" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="675" fill="#0B0B0D"/>
+<rect width="1200" height="675" fill="url(#g)"/>
+<rect x="28" y="28" width="1144" height="619" fill="none" stroke="#C9A15A" stroke-opacity=".28" stroke-width="1.5"/>
+<polygon points="620,150 1000,150 1026,128 646,128" fill="#C9A15A" opacity=".28"/>
+<rect x="620" y="150" width="380" height="6" fill="#C9A15A" opacity=".45"/>
+<polygon points="1000,150 1026,128 1026,134 1000,156" fill="#C9A15A" opacity=".45"/>
+<rect x="620" y="156" width="380" height="74" fill="#8F8F8A" opacity=".12"/>
+<polygon points="1000,156 1026,134 1026,208 1000,230" fill="#8F8F8A" opacity=".2"/>
+<polygon points="620,300 1000,300 1026,278 646,278" fill="#C9A15A" opacity=".28"/>
+<rect x="620" y="300" width="380" height="24" fill="#C9A15A" opacity=".45"/>
+<polygon points="1000,300 1026,278 1026,302 1000,324" fill="#C9A15A" opacity=".45"/>
+<rect x="620" y="324" width="380" height="56" fill="#8F8F8A" opacity=".12"/>
+<polygon points="1000,324 1026,302 1026,358 1000,380" fill="#8F8F8A" opacity=".2"/>
+<polygon points="620,450 1000,450 1026,428 646,428" fill="#C9A15A" opacity=".28"/>
+<rect x="620" y="450" width="380" height="80" fill="#C9A15A" opacity=".45"/>
+<polygon points="1000,450 1026,428 1026,508 1000,530" fill="#C9A15A" opacity=".45"/>
+<g fill="none" stroke="#C9A15A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M620 164L628 156M620 184L648 156M620 204L668 156M620 224L688 156M634 230L708 156M654 230L728 156M674 230L748 156M694 230L768 156M714 230L788 156M734 230L808 156M754 230L828 156M774 230L848 156M794 230L868 156M814 230L888 156M834 230L908 156M854 230L928 156M874 230L948 156M894 230L968 156M914 230L988 156M934 230L1000 164M954 230L1000 184M974 230L1000 204M994 230L1000 224" stroke="#8F8F8A" stroke-width="1.5" opacity=".55"/>
+<rect x="620" y="150" width="380" height="80"/>
+<polygon points="620,150 1000,150 1026,128 646,128"/>
+<polygon points="1000,150 1026,128 1026,208 1000,230"/>
+<path d="M620 156H1000L1026 134"/>
+<path d="M620 332L628 324M620 352L648 324M620 372L668 324M632 380L688 324M652 380L708 324M672 380L728 324M692 380L748 324M712 380L768 324M732 380L788 324M752 380L808 324M772 380L828 324M792 380L848 324M812 380L868 324M832 380L888 324M852 380L908 324M872 380L928 324M892 380L948 324M912 380L968 324M932 380L988 324M952 380L1000 332M972 380L1000 352M992 380L1000 372" stroke="#8F8F8A" stroke-width="1.5" opacity=".55"/>
+<rect x="620" y="300" width="380" height="80"/>
+<polygon points="620,300 1000,300 1026,278 646,278"/>
+<polygon points="1000,300 1026,278 1026,358 1000,380"/>
+<path d="M620 324H1000L1026 302"/>
+<rect x="620" y="450" width="380" height="80"/>
+<polygon points="620,450 1000,450 1026,428 646,428"/>
+<polygon points="1000,450 1026,428 1026,508 1000,530"/>
+</g>
+<g fill="none" stroke="#E3C98A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M646 128H1026"/>
+<path d="M646 278H1026"/>
+<path d="M646 428H1026"/>
+</g>
+</svg>

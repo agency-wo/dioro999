@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-label="Jewellery, placeholder image">
+<title>Jewellery (placeholder)</title>
+<defs>
+<radialGradient id="v" cx=".5" cy=".5" r=".72"><stop offset=".55" stop-color="#F4F0E8" stop-opacity="0"/><stop offset="1" stop-color="#F4F0E8"/></radialGradient>
+<filter id="s" x="-40%" y="-100%" width="180%" height="300%"><feGaussianBlur stdDeviation="24"/></filter>
+<filter id="h" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+<linearGradient id="m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E3C98A"/><stop offset=".42" stop-color="#C9A15A"/><stop offset=".74" stop-color="#9A7A38"/><stop offset="1" stop-color="#C9A15A"/></linearGradient>
+<linearGradient id="r" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9A7A38"/><stop offset=".4" stop-color="#C9A15A"/><stop offset=".78" stop-color="#E3C98A"/><stop offset="1" stop-color="#C9A15A"/></linearGradient>
+<radialGradient id="b" cx=".35" cy=".32" r=".8"><stop offset="0" stop-color="#E3C98A"/><stop offset=".5" stop-color="#C9A15A"/><stop offset="1" stop-color="#9A7A38"/></radialGradient>
+</defs>
+<rect width="1200" height="1200" fill="#FDFCF8"/>
+<rect width="1200" height="1200" fill="url(#v)"/>
+<rect x="40" y="40" width="1120" height="1120" fill="none" stroke="#E8D5A3" stroke-width="2"/>
+<ellipse cx="600" cy="920" rx="230" ry="22" fill="#0B0B0D" opacity=".18" filter="url(#s)"/>
+<g fill="none" stroke="#C9A15A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M430 380H770L950 520V542L600 855L250 542V520Z"/>
+<path d="M250 542H950"/>
+<path d="M430 380L340 520M430 380L515 520M600 380L515 520M600 380L685 520M770 380L685 520M770 380L860 520"/>
+<path d="M340 520L600 855M515 520L600 855M685 520L600 855M860 520L600 855"/>
+</g>
+<g fill="none" stroke="#E3C98A" stroke-width="4" stroke-linecap="round">
+<path d="M440 370H760M262 532L596 845"/>
+</g>
+<path d="M430 380H770L685 520H515Z" fill="#E3C98A" opacity=".12"/>
+</svg>
