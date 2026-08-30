@@ -17,6 +17,26 @@ model, and that is the right source. --include-brands overrides this; it is not 
 THE KEY IS NEVER PRINTED and never stored by this script. It comes from GEMINI_API_KEY, or from
 --env-file <path> pointing at any dotenv file, which is read only to pull that one variable.
 
+THE FREE ROUTE WAS TRIED AND REJECTED, on 2026-08-30, so nobody spends another afternoon on it.
+Fifteen generations against Pollinations, which is genuinely free, genuinely keyless and genuinely
+works. It is not a cost or access problem. It is that this class of model cannot be told what to
+leave OUT, and the failures were all that shape:
+
+  - the instruction-style prompt below, with its list of negatives, returned a black plastic ring
+    for a gold rope chain. Diffusion models do not process negation; naming "gift box" makes a
+    gift box more likely, not less
+  - "rope chain" came back as literal yellow cord, four times out of four
+  - wording that avoided "rope" produced a real gold chain, worn by a woman, from a prompt that
+    said "isolated on a pure white background" and never mentioned a person
+  - the 20 g bullion bar came back as TWO bars with gibberish lettering stamped into them, and on
+    a second wording as something that reads as a bar of soap
+  - only the diamond solitaire came close, and it had six prongs where the listing says four
+  - output is capped at 768 px anonymously, below the 1200 the cards reserve
+
+An accurate drawing of a rope chain beats a photorealistic picture of a piece of rope, so none of
+this was written into the shop. Gemini's image model is worth the ~$1.62 precisely because it
+follows instructions like "no model, no text", which is the exact thing that failed here.
+
 IT NEEDS A BILLED PROJECT. Checked on 2026-08-30 against the key this workspace holds: the key is
 valid, 50 models are visible including all six image models, and a text call returns 200 - but
 every image model returns HTTP 429 with "limit: 0" on the free tier metric. That is not a rate
