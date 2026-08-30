@@ -195,16 +195,24 @@ def process(src: Path, stem: str, mask: str = "auto", holes: bool = False) -> tu
     bbox = cutout.getbbox()
     if not bbox:
         raise SystemExit(f"{src.name}: the cutout is empty. Try --mask lum or --mask isnet.")
-    cutout = cutout.crop(bbox)
+    return square_on_white(cutout.crop(bbox), stem)
+
+
+def square_on_white(subject, stem: str) -> tuple:
+    """Scale a trimmed RGBA subject to fit the canvas less its margin, centre it on white and
+    write both encodings. Shared so every product image, whatever produced it, lands at the same
+    size with the same padding: a grid where one item is drawn larger than its neighbours reads
+    as sloppier than either image is on its own."""
+    from PIL import Image
 
     target = CANVAS - 2 * MARGIN
-    w, h = cutout.size
+    w, h = subject.size
     scale = min(target / w, target / h)
     size = (max(1, round(w * scale)), max(1, round(h * scale)))
-    cutout = cutout.resize(size, Image.LANCZOS)
+    subject = subject.resize(size, Image.LANCZOS)
 
     canvas = Image.new("RGBA", (CANVAS, CANVAS), (255, 255, 255, 255))
-    canvas.paste(cutout, ((CANVAS - size[0]) // 2, (CANVAS - size[1]) // 2), cutout)
+    canvas.paste(subject, ((CANVAS - size[0]) // 2, (CANVAS - size[1]) // 2), subject)
     rgb = canvas.convert("RGB")
 
     OUT.mkdir(parents=True, exist_ok=True)
