@@ -17,6 +17,12 @@ model, and that is the right source. --include-brands overrides this; it is not 
 THE KEY IS NEVER PRINTED and never stored by this script. It comes from GEMINI_API_KEY, or from
 --env-file <path> pointing at any dotenv file, which is read only to pull that one variable.
 
+IT NEEDS A BILLED PROJECT. Checked on 2026-08-30 against the key this workspace holds: the key is
+valid, 50 models are visible including all six image models, and a text call returns 200 - but
+every image model returns HTTP 429 with "limit: 0" on the free tier metric. That is not a rate
+limit to wait out, it is image generation being unavailable without billing. Turn billing on at
+https://aistudio.google.com/apikey. The tool now says this instead of retrying a hard zero.
+
 usage:
     python _tools/make_ai_images.py --dry-run            # show every prompt, call nothing
     python _tools/make_ai_images.py --only rope-chain-14k-50
@@ -157,9 +163,12 @@ def generate(prompt: str, key: str) -> bytes:
     """One image, as raw bytes. Retries on the transient statuses only; a 400 or a 403 is a real
     problem with the request or the key and retrying it just burns quota."""
     body = json.dumps({
-        "model": MODEL,
+        "model": globals()["MODEL"],
         "input": [{"type": "text", "text": prompt}],
-        "response_format": {"type": "image", "mime_type": "image/png",
+        # JPEG, not PNG: the API rejects image/png outright with "Supported values: 'image/jpeg'".
+        # No loss here, since the backdrop is opaque white and trim_to_subject finds it by
+        # brightness rather than by an alpha channel.
+        "response_format": {"type": "image", "mime_type": "image/jpeg",
                             "aspect_ratio": "1:1", "image_size": "2K"},
     }).encode("utf-8")
 
@@ -177,6 +186,16 @@ def generate(prompt: str, key: str) -> bytes:
             last = f"HTTP {e.code}: {mask(detail, key)}"
             if e.code not in (429, 500, 502, 503, 504):
                 raise SystemExit(last)
+            # A 429 normally means slow down. "limit: 0" means the opposite: this tier is not
+            # allowed to do this at all, so every retry is a guaranteed failure and a wasted
+            # minute. Verified against this project on 2026-08-30: text calls returned 200 and
+            # all six image models returned limit: 0, which is image generation being paid-only.
+            if "limit: 0" in detail:
+                raise SystemExit(
+                    "Image generation is not available on this API tier (the quota is a hard "
+                    "zero, not a rate limit).\nThe key and the project are otherwise fine, and "
+                    "text calls on it work.\nEnable billing for the project at "
+                    "https://aistudio.google.com/apikey and re-run.")
         except (urllib.error.URLError, TimeoutError) as e:
             last = f"network: {e}"
         except (KeyError, ValueError) as e:
@@ -248,7 +267,12 @@ def main() -> int:
                     help="also generate the branded watches. Not recommended, see the header")
     ap.add_argument("--force", action="store_true", help="regenerate even if an image exists")
     ap.add_argument("--env-file", metavar="PATH", help="dotenv holding GEMINI_API_KEY")
+    ap.add_argument("--model", default=MODEL,
+                    help=f"image model to call (default {MODEL}). Image generation is not on the "
+                         "free tier for every model, so this is worth changing before assuming "
+                         "the key is wrong")
     a = ap.parse_args()
+    globals()["MODEL"] = a.model
 
     doc = json.loads(DATA.read_text(encoding="utf-8"))
     by_slug = {p["slug"]: p for p in doc["products"]}
