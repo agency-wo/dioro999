@@ -286,6 +286,7 @@ try:
                 "silver": set(re.findall(r'"([0-9.K]+)"', re.search(r'silver:\s*\[(.*?)\]', CFG.split("PURITIES")[1]).group(1)))}
     ids, slugs = set(), set()
     placeholders = 0
+    covers = {}
     for r in data.get("products", []):
         pid = r.get("id", "?")
         if not re.match(r"^p-\d{13}$", str(pid)): fail("products.json", f"check 21: bad id {pid}")
@@ -304,7 +305,29 @@ try:
         if r.get("badge") not in ("", "New", "Sale"): fail("products.json", f"check 21: {pid} badge {r.get('badge')}")
         for img in r.get("images", []):
             if not (ROOT / img).exists(): fail("products.json", f"check 21: {pid} image missing {img}")
+        if r.get("images"): covers.setdefault(r["images"][0], []).append(r)
         if r.get("placeholder") is True: placeholders += 1
+    # 24 two items at different prices must never show the same cover picture.
+    # This shipped once: 24 products shared 13 images, so the 640 rope chain and the 3000 Cuban
+    # link were one drawing, and all eight watches from a 110 G-Shock to a 3250 moon phase were
+    # another. A shopper cannot tell what the expensive one is, which is the whole job of the
+    # picture. Same picture at the SAME price is fine - two 45 silver bands legitimately match.
+    for img, rs in sorted(covers.items()):
+        prices = sorted({r.get("price") for r in rs})
+        if len(prices) > 1:
+            who = ", ".join(f"{r.get('slug')} ({r.get('price')})" for r in rs)
+            fail("products.json", f"check 24: {img} is the cover for differing prices: {who}")
+    shop_dir = ROOT / "assets" / "img" / "shop"
+    if shop_dir.is_dir():
+        used = {i for rs in covers.values() for r in rs for i in r.get("images", [])}
+        # placeholder-<type>-<metal>.svg is what render.js composes for an item with no picture,
+        # so those are reachable even with nothing pointing at them today. Anything else that is
+        # unused is either dead weight or an illustration somebody forgot to wire up.
+        spare = sorted(f.name for f in shop_dir.glob("*.svg")
+                       if f"assets/img/shop/{f.name}" not in used
+                       and not re.match(r"^placeholder-[a-z]+-(gold|silver)\.svg$", f.name)
+                       and f.name != "placeholder-generic.svg")
+        if spare: warn("products.json", f"check 24: illustration(s) on disk that nothing uses: {', '.join(spare)}")
     if placeholders: warn("products.json", f"check 13: {placeholders} placeholder product(s) still in the catalogue")
 except Exception as e:
     fail("products.json", f"check 21: {e}")

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-label="Gold wedding band, side view, placeholder illustration">
+<title>Gold wedding band, side view (illustration)</title>
+<defs>
+<radialGradient id="v" cx=".5" cy=".5" r=".72"><stop offset=".55" stop-color="#F4F0E8" stop-opacity="0"/><stop offset="1" stop-color="#F4F0E8"/></radialGradient>
+<filter id="s" x="-40%" y="-100%" width="180%" height="300%"><feGaussianBlur stdDeviation="24"/></filter>
+<filter id="h" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+<linearGradient id="m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E3C98A"/><stop offset=".42" stop-color="#C9A15A"/><stop offset=".74" stop-color="#9A7A38"/><stop offset="1" stop-color="#C9A15A"/></linearGradient>
+<linearGradient id="r" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9A7A38"/><stop offset=".4" stop-color="#C9A15A"/><stop offset=".78" stop-color="#E3C98A"/><stop offset="1" stop-color="#C9A15A"/></linearGradient>
+<radialGradient id="b" cx=".35" cy=".32" r=".8"><stop offset="0" stop-color="#E3C98A"/><stop offset=".5" stop-color="#C9A15A"/><stop offset="1" stop-color="#9A7A38"/></radialGradient>
+<linearGradient id="st" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#15151A"/><stop offset=".5" stop-color="#0B0B0D"/><stop offset="1" stop-color="#15151A"/></linearGradient>
+<linearGradient id="sl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2F2F0"/><stop offset=".45" stop-color="#C9C9C4"/><stop offset=".8" stop-color="#8F8F8A"/><stop offset="1" stop-color="#C9C9C4"/></linearGradient>
+<radialGradient id="dl" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#1E1E24"/><stop offset="1" stop-color="#0B0B0D"/></radialGradient>
+<radialGradient id="wh" cx=".38" cy=".3" r=".85"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".6" stop-color="#EDECE8"/><stop offset="1" stop-color="#D6D4CE"/></radialGradient>
+<linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#DCEAF2"/><stop offset="1" stop-color="#A9C3D2"/></linearGradient>
+</defs>
+<rect width="1200" height="1200" fill="#FDFCF8"/><rect width="1200" height="1200" fill="url(#v)"/><rect x="40" y="40" width="1120" height="1120" fill="none" stroke="#E8D5A3" stroke-width="2"/>
+<ellipse cx="600" cy="800" rx="250" ry="34" fill="#0B0B0D" opacity=".18" filter="url(#s)"/><ellipse cx="600" cy="600" rx="330" ry="112" fill="url(#r)"/><ellipse cx="600" cy="600" rx="330" ry="112" fill="none" stroke="#9A7A38" stroke-width="3"/><path d="M270 600a330 112 0 0 0 660 0v-96a330 112 0 0 1-660 0z" fill="url(#m)" stroke="#9A7A38" stroke-width="3"/><ellipse cx="600" cy="504" rx="330" ry="112" fill="url(#b)" stroke="#9A7A38" stroke-width="3"/><ellipse cx="600" cy="504" rx="238" ry="66" fill="#EFE9DC"/><ellipse cx="600" cy="504" rx="238" ry="66" fill="none" stroke="#9A7A38" stroke-width="3"/><path d="M406 456a238 66 0 0 1 120-34" stroke="#FDFCF8" stroke-width="9" fill="none" opacity=".6" stroke-linecap="round"/>
+<ellipse cx="470" cy="430" rx="140" ry="48" transform="rotate(-38 470 430)" fill="#FDFCF8" opacity=".07"/><ellipse cx="430" cy="372" rx="38" ry="13" transform="rotate(-38 430 372)" fill="#FDFCF8" opacity=".33" filter="url(#h)"/>
+</svg>

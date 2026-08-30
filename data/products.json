@@ -17,7 +17,7 @@
       "currency": "USD",
       "images": [
         "assets/img/shop/placeholder-ring-gold.svg",
-        "assets/img/shop/placeholder-generic.svg"
+        "assets/img/shop/placeholder-ring-gold-side.svg"
       ],
       "description": "Classic court-profile wedding band in 18K yellow gold, 3 mm wide with a polished finish, supplied in a gift box.",
       "inStock": true,
@@ -41,7 +41,7 @@
       "originalPrice": null,
       "currency": "USD",
       "images": [
-        "assets/img/shop/placeholder-chain-gold.svg"
+        "assets/img/shop/placeholder-chain-rope-gold.svg"
       ],
       "description": "Diamond-cut rope chain in 14K yellow gold with a lobster clasp, 2.5 mm wide, supplied in a gift box.",
       "inStock": true,
@@ -65,7 +65,7 @@
       "originalPrice": null,
       "currency": "USD",
       "images": [
-        "assets/img/shop/placeholder-ring-gold.svg"
+        "assets/img/shop/placeholder-ring-solitaire-gold.svg"
       ],
       "description": "Four-claw solitaire ring in 18K white gold set with a 0.30 ct round brilliant diamond, certificate included.",
       "inStock": true,
@@ -113,7 +113,7 @@
       "originalPrice": 440,
       "currency": "USD",
       "images": [
-        "assets/img/shop/placeholder-earring-gold.svg"
+        "assets/img/shop/placeholder-earring-hoop-gold.svg"
       ],
       "description": "Hollow tube hoop earrings in 14K yellow gold, 18 mm diameter with hinged snap closures, sold as a pair.",
       "inStock": true,
@@ -185,7 +185,7 @@
       "originalPrice": null,
       "currency": "USD",
       "images": [
-        "assets/img/shop/placeholder-bar-gold.svg"
+        "assets/img/shop/placeholder-coin-gold.svg"
       ],
       "description": "One troy ounce fine gold bullion coin at 999.9 purity, 32.7 mm diameter, supplied in a protective capsule. Price confirmed at order.",
       "inStock": true,
@@ -281,7 +281,7 @@
       "originalPrice": null,
       "currency": "USD",
       "images": [
-        "assets/img/shop/placeholder-earring-silver.svg"
+        "assets/img/shop/placeholder-earring-stud-silver.svg"
       ],
       "description": "Round stud earrings in 925 sterling silver, 6 mm polished domes with butterfly backs, sold as a pair.",
       "inStock": true,
@@ -305,7 +305,7 @@
       "originalPrice": null,
       "currency": "USD",
       "images": [
-        "assets/img/shop/placeholder-ring-silver.svg"
+        "assets/img/shop/placeholder-ring-signet-silver.svg"
       ],
       "description": "Oval signet ring in 925 sterling silver with an oxidised finish and a flat face for engraving, supplied in a pouch.",
       "inStock": true,
@@ -401,8 +401,7 @@
       "originalPrice": null,
       "currency": "USD",
       "images": [
-        "assets/img/shop/placeholder-watch.svg",
-        "assets/img/shop/placeholder-generic.svg"
+        "assets/img/shop/placeholder-watch-sport.svg"
       ],
       "description": "Seiko 5 Sports automatic with a 42 mm steel case, day-date display and nylon strap, supplied with box and warranty card.",
       "inStock": true,
@@ -426,7 +425,7 @@
       "originalPrice": null,
       "currency": "USD",
       "images": [
-        "assets/img/shop/placeholder-watch.svg"
+        "assets/img/shop/placeholder-watch-digital.svg"
       ],
       "description": "Casio G-Shock GA-2100 with a 45 mm carbon core guard case, analogue-digital display and resin strap, supplied with box.",
       "inStock": true,
@@ -450,7 +449,7 @@
       "originalPrice": null,
       "currency": "USD",
       "images": [
-        "assets/img/shop/placeholder-watch.svg"
+        "assets/img/shop/placeholder-watch-chrono.svg"
       ],
       "description": "Citizen Eco-Drive chronograph with a 43 mm steel case, light-powered movement and steel bracelet, supplied with box and warranty card.",
       "inStock": true,
@@ -474,7 +473,7 @@
       "originalPrice": 240,
       "currency": "USD",
       "images": [
-        "assets/img/shop/placeholder-watch.svg"
+        "assets/img/shop/placeholder-watch-dress.svg"
       ],
       "description": "Orient Bambino automatic with a 40 mm steel case, domed crystal and leather strap, supplied with box and warranty card.",
       "inStock": true,
@@ -498,7 +497,7 @@
       "originalPrice": null,
       "currency": "USD",
       "images": [
-        "assets/img/shop/placeholder-watch.svg"
+        "assets/img/shop/placeholder-watch-integrated.svg"
       ],
       "description": "Tissot PRX quartz with a 40 mm steel case, integrated steel bracelet and sapphire crystal, supplied with box and warranty card.",
       "inStock": true,
@@ -522,7 +521,7 @@
       "originalPrice": null,
       "currency": "USD",
       "images": [
-        "assets/img/shop/placeholder-watch.svg"
+        "assets/img/shop/placeholder-watch-field.svg"
       ],
       "description": "Hamilton Khaki Field hand-wound with a 38 mm steel case, sapphire crystal and canvas strap, supplied with box and warranty card.",
       "inStock": true,
@@ -570,7 +569,7 @@
       "originalPrice": null,
       "currency": "USD",
       "images": [
-        "assets/img/shop/placeholder-watch.svg"
+        "assets/img/shop/placeholder-watch-moonphase.svg"
       ],
       "description": "Longines Master Collection moon phase automatic with a 40 mm steel case and leather strap, supplied with box and warranty card.",
       "inStock": true,

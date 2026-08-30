@@ -70,7 +70,36 @@
     return p.name + (p.purity ? ", " + p.purity + metal : "");
   }
 
+  /* A shape the category alone cannot tell apart. Checked in order against the name and the
+     description, before the category fallback below, so a new item that is obviously a rope chain
+     or a moon phase does not land on the generic drawing for its category. Each entry names a file
+     that exists in assets/img/shop/; there is no gold/silver substitution here, because the
+     refinements are not drawn for both metals.
+
+     WATCH TERMS ARE GENERIC ON PURPOSE. They match what a watch IS - digital, chronograph, field,
+     moon phase - and never a manufacturer's model name. The drawings are generic types too, so
+     matching "Bambino" or "PRX" would promise a specific maker's design that the illustration
+     deliberately does not show. */
+  var REFINE = [
+    [/\brope\b/, "gold", "placeholder-chain-rope-gold"],
+    [/\bsolitaire\b|\bdiamond\b|\bct\b/, "gold", "placeholder-ring-solitaire-gold"],
+    [/\bcoin\b|\bsovereign\b|\bducat\b/, "gold", "placeholder-coin-gold"],
+    [/\bsignet\b/, "silver", "placeholder-ring-signet-silver"],
+    [/\bmoon\s*phase\b/, "watches", "placeholder-watch-moonphase"],
+    [/\bchrono/, "watches", "placeholder-watch-chrono"],
+    [/\bdigital\b|\blcd\b/, "watches", "placeholder-watch-digital"],
+    [/\bfield\b/, "watches", "placeholder-watch-field"],
+    [/\bintegrated\b/, "watches", "placeholder-watch-integrated"],
+    [/\bdiver?\b|\bdiving\b|\bsports?\b/, "watches", "placeholder-watch-sport"],
+    [/\bdress\b/, "watches", "placeholder-watch-dress"]
+  ];
   function placeholderFor(p) {
+    var hay = norm([p.name, p.description].join(" "));
+    for (var i = 0; i < REFINE.length; i++) {
+      if (REFINE[i][1] === p.category && REFINE[i][0].test(hay)) {
+        return "assets/img/shop/" + REFINE[i][2] + ".svg";
+      }
+    }
     if (p.category === "watches") return "assets/img/shop/placeholder-watch.svg";
     var single = SINGULAR[p.type];
     if (single && (p.category === "gold" || p.category === "silver")) {
@@ -121,6 +150,10 @@
       + '<img src="' + esc(coverImage(p, rootPrefix)) + '" alt="' + esc(altText(p)) + '" width="1200" height="1200" loading="lazy" decoding="async">'
       + (badge ? '<span class="badge ' + badge.cls + '">' + badge.text + "</span>" : "")
       + (p.inStock ? "" : '<span class="product-card__soldover" aria-hidden="true">Sold out</span>')
+      /* The grid gets the one-word admission; the full sentence and the ask for real photos live
+         on the product page, where the buyer is actually deciding. Twenty-four sentences down a
+         grid would read as an apology for the shop rather than a note about one picture. */
+      + (p.placeholder ? '<span class="product-card__illus">Illustration</span>' : "")
       + "</a>";
     html += '<div class="product-card__body">'
       + '<p class="product-card__kicker">' + esc(kicker(p)) + "</p>"

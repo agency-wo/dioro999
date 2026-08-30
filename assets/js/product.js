@@ -12,6 +12,7 @@
   var crumbCat = $("pdpCrumbCat"), crumbCatLink = $("pdpCrumbCatLink"), crumbName = $("pdpCrumbName");
   var img = $("pdpImage"), badge = $("pdpBadge"), thumbs = $("pdpThumbs"), kicker = $("pdpKicker"), title = $("pdpTitle"), chips = $("pdpChips");
   var priceEl = $("pdpPrice"), wasEl = $("pdpWas"), availEl = $("pdpAvail"), qtyWrap = $("pdpQtyWrap"), qty = $("pdpQty"), dec = $("pdpQtyDec"), inc = $("pdpQtyInc"), addBtn = $("pdpAdd"), waBtn = $("pdpWa"), desc = $("pdpDesc"), specs = $("pdpSpecs"), relSec = $("pdpRelatedSec"), rel = $("pdpRelated");
+  var illus = $("pdpIllus"), illusWa = $("pdpIllusWa");
   var MAXQ = C.CART_MAX_QTY || 10;
   var product = null, gallery = [], current = 0;
 
@@ -108,6 +109,15 @@
     }
     var waText = "Hi, I am interested in " + p.name + " (" + R.fmtPrice(p.price) + "). " + url;
     waBtn.href = "https://wa.me/" + C.WHATSAPP + "?text=" + encodeURIComponent(waText);
+
+    /* The picture on a placeholder item is a drawing, not the piece. Saying so is the honest
+       thing, and on a 1450 EUR ring it is also the moment a buyer most wants a real photo, so
+       the admission carries the ask rather than sitting there as a disclaimer. */
+    if (illus && illusWa) {
+      illus.hidden = !p.placeholder;
+      illusWa.href = "https://wa.me/" + C.WHATSAPP + "?text=" + encodeURIComponent(
+        "Hi, could you send photos of " + p.name + "? " + url);
+    }
     desc.textContent = p.description || "";
     desc.hidden = !p.description;
 
