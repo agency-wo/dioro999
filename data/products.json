@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-09T00:29:55.115Z",
+  "updatedAt": "2026-09-09T00:29:57.321Z",
   "products": [
     {
       "id": "p-1787133600001",
@@ -20,7 +20,7 @@
         "assets/img/shop/placeholder-ring-gold-side.svg"
       ],
       "description": "Classic court-profile wedding band in 18K yellow gold, 3 mm wide with a polished finish, supplied in a gift box.",
-      "inStock": false,
+      "inStock": true,
       "featured": true,
       "badge": "New",
       "placeholder": true,
